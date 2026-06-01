@@ -2,7 +2,8 @@
 #include <vector>
 #include "avltree.h"
 
-class AVLTable {
+class AVLTable 
+{
     std::vector<AVLNode*> table;
     int size;
     AVLTree tree;
@@ -11,6 +12,9 @@ class AVLTable {
 
 public:
     AVLTable(int s);
+    ~AVLTable();
     void insert(int key, int value);
     void remove(int key);
+private:
+    void clearTree(AVLNode* node);
 };
