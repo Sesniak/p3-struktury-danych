@@ -10,7 +10,8 @@ int CuckooHash::hash1(int key)
 }
 int CuckooHash::hash2(int key) 
 { 
-    return (key / size) % size; 
+    int scrambled = key ^ (key >> 7);
+    return (scrambled * 31)  % size; 
 }
 
 void CuckooHash::insert(int key) 
