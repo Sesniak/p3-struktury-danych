@@ -61,8 +61,10 @@ AVLNode* AVLTree::remove(AVLNode* node, int key)
 
     if (key < node->key) node->left = remove(node->left, key);
     else if (key > node->key) node->right = remove(node->right, key);
-    else {
-        if (!node->left || !node->right) {
+    else 
+    {
+        if (!node->left || !node->right) 
+        {
             AVLNode* temp = node->left ? node->left : node->right;
             delete node;
             return temp;
